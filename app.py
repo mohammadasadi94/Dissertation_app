@@ -93,30 +93,30 @@ if page == "EDA":
                 ]
             }
             occupation_index = [
-                "Architecture & Engineering",
-                "Arts Design Entertainment Sports & Media",
-                "Building & Grounds Cleaning & Maintenance",
-                "Business & Financial",
-                "Community & Social Services",
-                "Computer & Mathematical",
-                "Construction & Extraction",
-                "Education&Training&Library",
-                "Farming Fishing & Forestry",
-                "Food Preparation & Serving Related",
-                "Healthcare Practitioners & Technical",
-                "Healthcare Support",
-                "Installation Maintenance & Repair",
-                "Legal",
-                "Life Physical Social Science",
+                "Design and Engineering",
+                "Arts and Media",
+                "Cleaning Services",
+                "Commerce and Accounting",
+                "Social Services",
+                "IT and Analytics",
+                "Construction",
+                "Teaching and Learning Support",
+                "Agriculture",
+                "Catering and Food Service",
+                "Healthcare Professionals",
+                "Healthcare Assistance",
+                "Technical Maintenance",
+                "Law Professions",
+                "Life, Physical, and Social Science",
                 "Management",
-                "Office & Administrative Support",
-                "Personal Care & Service",
-                "Production Occupations",
-                "Protective Service",
+                "Office and Administrative Support",
+                "Personal Care",
+                "Manufacturing and Production",
+                "Security and Emergency Services",
                 "Retired",
-                "Sales & Related",
+                "Sales",
                 "Student",
-                "Transportation & Material Moving",
+                "Logistics and Transport",
                 "Unemployed"
             ]
 
@@ -150,12 +150,12 @@ if page == "EDA":
                 "Rejected %": [44.7, 44.6, 47.4, 40.8, 28.4, 40.4]
             }
             edu_index = [
-                "Associates degree",
-                "Bachelors degree",
-                "Graduate degree (Masters or Doctorate)",
-                "High School",
+                "Associate Level",
+                "Undergraduate (Bachelor’s)",
+                "Postgraduate (Master’s/PhD)",
+                "High School Diploma",
                 "Some High School",
-                "Some college - no degree"
+                "No Degree "
             ]
             edu_df = pd.DataFrame(edu_data, index=edu_index)
 
