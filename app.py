@@ -50,7 +50,7 @@ if page == "EDA":
             "Accepted %": [41.0, 73.5, 49.9, 44.1, 70.7],
             "Rejected %": [59.0, 26.5, 50.1, 55.9, 29.3]
         }
-        index = ["Bar", "Fast Food", "Café", "Inexpensive restaurant", "Mid-range restaurant"]
+        index = ["Bar", "Fast Food", "Café", "Mid-range restaurant", "Inexpensive restaurant"]
         grouped = pd.DataFrame(data, index=index)
 
         # Plot
