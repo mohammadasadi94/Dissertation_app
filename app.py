@@ -10,7 +10,6 @@ st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["EDA", "Models Comparison", "Occupation-Based Recommendation"])
 
 if page == "EDA":
-    st.title("Mohammad Asadi, st20307587")
     st.header("Exploratory Data Analysis (EDA)")
 
 
@@ -1393,6 +1392,7 @@ elif page == "Occupation-Based Recommendation":
             for tab, time in zip(time_tabs, time_of_day_dict.keys()):
                 with tab:
                     plot_occupation_probs(f"Time of Day: {time}", time_of_day_dict[time])
+
 
 
 
