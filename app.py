@@ -19,14 +19,14 @@ if page == "EDA":
     colors = ['#90ee90', '#f98484']
 
     # Adjusted figure size and font sizes
-    fig1, ax1 = plt.subplots(figsize=(2.5, 2.5))  # compact but readable
+    fig1, ax1 = plt.subplots(figsize=(1.5, 1.5))  # compact but readable
     wedges, texts, autotexts = ax1.pie(
         sizes,
         labels=labels,
         autopct='%1.1f%%',
         startangle=90,
         colors=colors,
-        textprops={'fontsize': 8}  # balanced label size
+        textprops={'fontsize': 5}  # balanced label size
     )
     ax1.axis('equal')  # Keep the pie circular
 
@@ -1392,6 +1392,7 @@ elif page == "Occupation-Based Recommendation":
             for tab, time in zip(time_tabs, time_of_day_dict.keys()):
                 with tab:
                     plot_occupation_probs(f"Time of Day: {time}", time_of_day_dict[time])
+
 
 
 
