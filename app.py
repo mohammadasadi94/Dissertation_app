@@ -31,7 +31,7 @@ if page == "EDA":
     ax1.axis('equal')  # Keep the pie circular
 
     # Subtitle smaller than main title
-    ax1.set_title("Overall Coupon Acceptance Rate", fontsize=10, pad=10)
+    ax1.set_title("Overall Coupon Acceptance Rate", fontsize=5, pad=10)
 
     # Display in Streamlit
     st.pyplot(fig1)
@@ -1392,6 +1392,7 @@ elif page == "Occupation-Based Recommendation":
             for tab, time in zip(time_tabs, time_of_day_dict.keys()):
                 with tab:
                     plot_occupation_probs(f"Time of Day: {time}", time_of_day_dict[time])
+
 
 
 
