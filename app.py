@@ -11,6 +11,7 @@ page = st.sidebar.radio("Go to", ["EDA", "Models Comparison", "Occupation-Based 
 
 if page == "EDA":
     st.title("Exploratory Data Analysis (EDA)")
+    st.markdown("**Mohammad Asadi** | Student Number: 12345678")
 
     # Pie chart data
     labels = ['Accepted', 'Rejected']
@@ -542,140 +543,146 @@ elif page == "Occupation-Based Recommendation":
 
         # Your fixed occupation-probability data for each coupon type:
         coupon_dict = {
-            "Coffee House": [
-                ("Healthcare Practitioners & Technical", 0.837),
-                ("Installation Maintenance & Repair", 0.757),
-                ("Healthcare Support", 0.725),
-                ("Legal", 0.644),
-                ("Transportation & Material Moving", 0.632),
-                ("Construction & Extraction", 0.596),
-                ("Unemployed", 0.594),
-                ("Food Preparation & Serving Related", 0.578),
-                ("Student", 0.564),
-                ("Retired", 0.545),
-                ("Management", 0.541),
-                ("Business & Financial", 0.524),
-                ("Architecture & Engineering", 0.518),
-                ("Computer & Mathematical", 0.502),
-                ("Arts Design Entertainment Sports & Media", 0.492),
-                ("Life Physical Social Science", 0.490),
-                ("Office & Administrative Support", 0.478),
-                ("Education&Training&Library", 0.470),
-                ("Personal Care & Service", 0.455),
-                ("Sales & Related", 0.418),
-                ("Production Occupations", 0.417),
-                ("Protective Service", 0.410),
-                ("Farming Fishing & Forestry", 0.401),
-                ("Community & Social Services", 0.343),
-                ("Building & Grounds Cleaning & Maintenance", 0.004),
+            "Café": [
+                ("Healthcare Professionals", 0.837),                       # "Healthcare Practitioners & Technical"
+                ("Technical Maintenance", 0.757),                          # "Installation Maintenance & Repair"
+                ("Healthcare Assistance", 0.725),                          # "Healthcare Support"
+                ("Law Professions", 0.644),                                # "Legal"
+                ("Logistics and Transport", 0.632),                        # "Transportation & Material Moving"
+                ("Construction", 0.596),                                   # "Construction & Extraction"
+                ("Unemployed", 0.594),                                     # "Unemployed"
+                ("Catering and Food Service", 0.578),                      # "Food Preparation & Serving Related"
+                ("Student", 0.564),                                        # "Student"
+                ("Retired", 0.545),                                        # "Retired"
+                ("Management", 0.541),                                     # "Management"
+                ("Commerce and Accounting", 0.524),                        # "Business & Financial"
+                ("Design and Engineering", 0.518),                         # "Architecture & Engineering"
+                ("IT and Analytics", 0.502),                               # "Computer & Mathematical"
+                ("Arts and Media", 0.492),                                 # "Arts Design Entertainment Sports & Media"
+                ("Life, Physical, and Social Science", 0.490),             # "Life Physical Social Science"
+                ("Office and Administrative Support", 0.478),              # "Office & Administrative Support"
+                ("Teaching and Learning Support", 0.470),                  # "Education&Training&Library"
+                ("Personal Care", 0.455),                                  # "Personal Care & Service"
+                ("Sales", 0.418),                                          # "Sales & Related"
+                ("Manufacturing and Production", 0.417),                   # "Production Occupations"
+                ("Security and Emergency Services", 0.410),                # "Protective Service"
+                ("Agriculture", 0.401),                                    # "Farming Fishing & Forestry"
+                ("Social Services", 0.343),                                # "Community & Social Services"
+                ("Cleaning Services", 0.004), 
             ],
             "Bar": [
-                ("Construction & Extraction", 0.879),
-                ("Installation Maintenance & Repair", 0.643),
-                ("Healthcare Practitioners & Technical", 0.625),
-                ("Healthcare Support", 0.617),
-                ("Protective Service", 0.594),
-                ("Production Occupations", 0.580),
-                ("Architecture & Engineering", 0.560),
-                ("Office & Administrative Support", 0.539),
-                ("Management", 0.522),
-                ("Business & Financial", 0.516),
-                ("Farming Fishing & Forestry", 0.502),
-                ("Life Physical Social Science", 0.494),
-                ("Food Preparation & Serving Related", 0.461),
-                ("Sales & Related", 0.452),
-                ("Student", 0.436),
-                ("Transportation & Material Moving", 0.357),
-                ("Education&Training&Library", 0.314),
-                ("Computer & Mathematical", 0.293),
-                ("Unemployed", 0.281),
-                ("Arts Design Entertainment Sports & Media", 0.267),
-                ("Personal Care & Service", 0.264),
-                ("Community & Social Services", 0.211),
-                ("Legal", 0.159),
-                ("Retired", 0.102),
-                ("Building & Grounds Cleaning & Maintenance", 0.009),
+                ("Construction", 0.879),                                   # "Construction & Extraction"
+                ("Technical Maintenance", 0.643),                          # "Installation Maintenance & Repair"
+                ("Healthcare Professionals", 0.625),                       # "Healthcare Practitioners & Technical"
+                ("Healthcare Assistance", 0.617),                          # "Healthcare Support"
+                ("Security and Emergency Services", 0.594),                # "Protective Service"
+                ("Manufacturing and Production", 0.580),                   # "Production Occupations"
+                ("Design and Engineering", 0.560),                         # "Architecture & Engineering"
+                ("Office and Administrative Support", 0.539),              # "Office & Administrative Support"
+                ("Management", 0.522),                                     # "Management"
+                ("Commerce and Accounting", 0.516),                        # "Business & Financial"
+                ("Agriculture", 0.502),                                    # "Farming Fishing & Forestry"
+                ("Life, Physical, and Social Science", 0.494),             # "Life Physical Social Science"
+                ("Catering and Food Service", 0.461),                      # "Food Preparation & Serving Related"
+                ("Sales", 0.452),                                          # "Sales & Related"
+                ("Student", 0.436),                                        # "Student"
+                ("Logistics and Transport", 0.357),                        # "Transportation & Material Moving"
+                ("Teaching and Learning Support", 0.314),                  # "Education&Training&Library"
+                ("IT and Analytics", 0.293),                               # "Computer & Mathematical"
+                ("Unemployed", 0.281),                                     # "Unemployed"
+                ("Arts and Media", 0.267),                                 # "Arts Design Entertainment Sports & Media"
+                ("Personal Care", 0.264),                                  # "Personal Care & Service"
+                ("Social Services", 0.211),                                # "Community & Social Services"
+                ("Law Professions", 0.159),                                # "Legal"
+                ("Retired", 0.102),                                        # "Retired"
+                ("Cleaning Services", 0.009),                              # "Building & Grounds Cleaning & Maintenance"
+
+
             ],
             # Add the other coupon types similarly ...
-            "Restaurant (<$20)": [
-                ("Installation Maintenance & Repair", 0.976),
-                ("Protective Service", 0.898),
-                ("Construction & Extraction", 0.860),
-                ("Management", 0.853),
-                ("Legal", 0.806),
-                ("Life Physical Social Science", 0.791),
-                ("Architecture & Engineering", 0.786),
-                ("Transportation & Material Moving", 0.742),
-                ("Sales & Related", 0.738),
-                ("Office & Administrative Support", 0.732),
-                ("Education&Training&Library", 0.727),
-                ("Student", 0.726),
-                ("Computer & Mathematical", 0.724),
-                ("Healthcare Support", 0.714),
-                ("Business & Financial", 0.708),
-                ("Unemployed", 0.668),
-                ("Community & Social Services", 0.642),
-                ("Arts Design Entertainment Sports & Media", 0.625),
-                ("Personal Care & Service", 0.618),
-                ("Farming Fishing & Forestry", 0.590),
-                ("Production Occupations", 0.584),
-                ("Healthcare Practitioners & Technical", 0.577),
-                ("Retired", 0.548),
-                ("Food Preparation & Serving Related", 0.533),
+            "Inexpensive restaurant": [
+                ("Technical Maintenance", 0.976),                          # "Installation Maintenance & Repair"
+                ("Security and Emergency Services", 0.898),                # "Protective Service"
+                ("Construction", 0.860),                                   # "Construction & Extraction"
+                ("Management", 0.853),                                     # "Management"
+                ("Law Professions", 0.806),                                # "Legal"
+                ("Life, Physical, and Social Science", 0.791),             # "Life Physical Social Science"
+                ("Design and Engineering", 0.786),                         # "Architecture & Engineering"
+                ("Logistics and Transport", 0.742),                        # "Transportation & Material Moving"
+                ("Sales", 0.738),                                          # "Sales & Related"
+                ("Office and Administrative Support", 0.732),              # "Office & Administrative Support"
+                ("Teaching and Learning Support", 0.727),                  # "Education&Training&Library"
+                ("Student", 0.726),                                        # "Student"
+                ("IT and Analytics", 0.724),                               # "Computer & Mathematical"
+                ("Healthcare Assistance", 0.714),                          # "Healthcare Support"
+                ("Commerce and Accounting", 0.708),                        # "Business & Financial"
+                ("Unemployed", 0.668),                                     # "Unemployed"
+                ("Social Services", 0.642),                                # "Community & Social Services"
+                ("Arts and Media", 0.625),                                 # "Arts Design Entertainment Sports & Media"
+                ("Personal Care", 0.618),                                  # "Personal Care & Service"
+                ("Agriculture", 0.590),                                    # "Farming Fishing & Forestry"
+                ("Manufacturing and Production", 0.584),                   # "Production Occupations"
+                ("Healthcare Professionals", 0.577),                       # "Healthcare Practitioners & Technical"
+                ("Retired", 0.548),                                        # "Retired"
+                ("Catering and Food Service", 0.533),                      # "Food Preparation & Serving Related"
+
+
             ],
-            "Restaurant ($20-50)": [
-                ("Legal", 0.861),
-                ("Construction & Extraction", 0.818),
-                ("Protective Service", 0.765),
-                ("Healthcare Support", 0.759),
-                ("Community & Social Services", 0.680),
-                ("Management", 0.650),
-                ("Office & Administrative Support", 0.641),
-                ("Business & Financial", 0.637),
-                ("Food Preparation & Serving Related", 0.610),
-                ("Computer & Mathematical", 0.570),
-                ("Education&Training&Library", 0.505),
-                ("Arts Design Entertainment Sports & Media", 0.483),
-                ("Architecture & Engineering", 0.462),
-                ("Sales & Related", 0.461),
-                ("Unemployed", 0.431),
-                ("Healthcare Practitioners & Technical", 0.418),
-                ("Student", 0.402),
-                ("Installation Maintenance & Repair", 0.292),
-                ("Personal Care & Service", 0.249),
-                ("Life Physical Social Science", 0.220),
-                ("Transportation & Material Moving", 0.217),
-                ("Farming Fishing & Forestry", 0.164),
-                ("Production Occupations", 0.136),
-                ("Retired", 0.113),
-                ("Building & Grounds Cleaning & Maintenance", 0.022),
+            "Mid-range restaurant)": [
+                ("Law Professions", 0.861),                                # "Legal"
+                ("Construction", 0.818),                                   # "Construction & Extraction"
+                ("Security and Emergency Services", 0.765),                # "Protective Service"
+                ("Healthcare Assistance", 0.759),                          # "Healthcare Support"
+                ("Social Services", 0.680),                                # "Community & Social Services"
+                ("Management", 0.650),                                     # "Management"
+                ("Office and Administrative Support", 0.641),              # "Office & Administrative Support"
+                ("Commerce and Accounting", 0.637),                        # "Business & Financial"
+                ("Catering and Food Service", 0.610),                      # "Food Preparation & Serving Related"
+                ("IT and Analytics", 0.570),                               # "Computer & Mathematical"
+                ("Teaching and Learning Support", 0.505),                  # "Education&Training&Library"
+                ("Arts and Media", 0.483),                                 # "Arts Design Entertainment Sports & Media"
+                ("Design and Engineering", 0.462),                         # "Architecture & Engineering"
+                ("Sales", 0.461),                                          # "Sales & Related"
+                ("Unemployed", 0.431),                                     # "Unemployed"
+                ("Healthcare Professionals", 0.418),                       # "Healthcare Practitioners & Technical"
+                ("Student", 0.402),                                        # "Student"
+                ("Technical Maintenance", 0.292),                          # "Installation Maintenance & Repair"
+                ("Personal Care", 0.249),                                  # "Personal Care & Service"
+                ("Life, Physical, and Social Science", 0.220),             # "Life Physical Social Science"
+                ("Logistics and Transport", 0.217),                        # "Transportation & Material Moving"
+                ("Agriculture", 0.164),                                    # "Farming Fishing & Forestry"
+                ("Manufacturing and Production", 0.136),                   # "Production Occupations"
+                ("Retired", 0.113),                                        # "Retired"
+                ("Cleaning Services", 0.022),                              # "Building & Grounds Cleaning & Maintenance"
+
             ],
-            "Carry out & Take away": [
-                ("Building & Grounds Cleaning & Maintenance", 0.996),
-                ("Construction & Extraction", 0.983),
-                ("Protective Service", 0.976),
-                ("Food Preparation & Serving Related", 0.895),
-                ("Transportation & Material Moving", 0.877),
-                ("Office & Administrative Support", 0.833),
-                ("Business & Financial", 0.790),
-                ("Management", 0.771),
-                ("Farming Fishing & Forestry", 0.764),
-                ("Healthcare Practitioners & Technical", 0.744),
-                ("Unemployed", 0.733),
-                ("Healthcare Support", 0.724),
-                ("Computer & Mathematical", 0.686),
-                ("Education&Training&Library", 0.686),
-                ("Personal Care & Service", 0.684),
-                ("Retired", 0.681),
-                ("Sales & Related", 0.680),
-                ("Installation Maintenance & Repair", 0.666),
-                ("Student", 0.647),
-                ("Life Physical Social Science", 0.615),
-                ("Community & Social Services", 0.614),
-                ("Arts Design Entertainment Sports & Media", 0.609),
-                ("Legal", 0.605),
-                ("Production Occupations", 0.516),
-                ("Architecture & Engineering", 0.416),
+            "Fast Food": [
+                ("Cleaning Services", 0.996),                              # "Building & Grounds Cleaning & Maintenance"
+                ("Construction", 0.983),                                   # "Construction & Extraction"
+                ("Security and Emergency Services", 0.976),                # "Protective Service"
+                ("Catering and Food Service", 0.895),                      # "Food Preparation & Serving Related"
+                ("Logistics and Transport", 0.877),                        # "Transportation & Material Moving"
+                ("Office and Administrative Support", 0.833),              # "Office & Administrative Support"
+                ("Commerce and Accounting", 0.790),                        # "Business & Financial"
+                ("Management", 0.771),                                     # "Management"
+                ("Agriculture", 0.764),                                    # "Farming Fishing & Forestry"
+                ("Healthcare Professionals", 0.744),                       # "Healthcare Practitioners & Technical"
+                ("Unemployed", 0.733),                                     # "Unemployed"
+                ("Healthcare Assistance", 0.724),                          # "Healthcare Support"
+                ("IT and Analytics", 0.686),                               # "Computer & Mathematical"
+                ("Teaching and Learning Support", 0.686),                  # "Education&Training&Library"
+                ("Personal Care", 0.684),                                  # "Personal Care & Service"
+                ("Retired", 0.681),                                        # "Retired"
+                ("Sales", 0.680),                                          # "Sales & Related"
+                ("Technical Maintenance", 0.666),                          # "Installation Maintenance & Repair"
+                ("Student", 0.647),                                        # "Student"
+                ("Life, Physical, and Social Science", 0.615),             # "Life Physical Social Science"
+                ("Social Services", 0.614),                                # "Community & Social Services"
+                ("Arts and Media", 0.609),                                 # "Arts Design Entertainment Sports & Media"
+                ("Law Professions", 0.605),                                # "Legal"
+                ("Manufacturing and Production", 0.516),                   # "Production Occupations"
+                ("Design and Engineering", 0.416),                         # "Architecture & Engineering"
+
             ],
         }
 
@@ -1205,83 +1212,86 @@ elif page == "Occupation-Based Recommendation":
 
             weather_dict = {
                 "Rainy": [
-                    ("Building & Grounds Cleaning & Maintenance", 0.014),
-                    ("Protective Service", 0.023),
-                    ("Healthcare Practitioners & Technical", 0.269),
-                    ("Arts Design Entertainment Sports & Media", 0.277),
-                    ("Computer & Mathematical", 0.315),
-                    ("Community & Social Services", 0.377),
-                    ("Legal", 0.380),
-                    ("Retired", 0.383),
-                    ("Unemployed", 0.419),
-                    ("Healthcare Support", 0.465),
-                    ("Student", 0.466),
-                    ("Sales & Related", 0.469),
-                    ("Farming Fishing & Forestry", 0.494),
-                    ("Education&Training&Library", 0.505),
-                    ("Personal Care & Service", 0.542),
-                    ("Transportation & Material Moving", 0.548),
-                    ("Business & Financial", 0.622),
-                    ("Office & Administrative Support", 0.647),
-                    ("Installation Maintenance & Repair", 0.672),
-                    ("Production Occupations", 0.678),
-                    ("Food Preparation & Serving Related", 0.698),
-                    ("Life Physical Social Science", 0.702),
-                    ("Management", 0.756),
-                    ("Construction & Extraction", 0.880),
-                    ("Architecture & Engineering", 0.917),
+                    ("Cleaning Services", 0.014),                              # "Building & Grounds Cleaning & Maintenance"
+                    ("Security and Emergency Services", 0.023),                # "Protective Service"
+                    ("Healthcare Professionals", 0.269),                       # "Healthcare Practitioners & Technical"
+                    ("Arts and Media", 0.277),                                 # "Arts Design Entertainment Sports & Media"
+                    ("IT and Analytics", 0.315),                               # "Computer & Mathematical"
+                    ("Social Services", 0.377),                                # "Community & Social Services"
+                    ("Law Professions", 0.380),                                # "Legal"
+                    ("Retired", 0.383),                                        # "Retired"
+                    ("Unemployed", 0.419),                                     # "Unemployed"
+                    ("Healthcare Assistance", 0.465),                          # "Healthcare Support"
+                    ("Student", 0.466),                                        # "Student"
+                    ("Sales", 0.469),                                          # "Sales & Related"
+                    ("Agriculture", 0.494),                                    # "Farming Fishing & Forestry"
+                    ("Teaching and Learning Support", 0.505),                  # "Education&Training&Library"
+                    ("Personal Care", 0.542),                                  # "Personal Care & Service"
+                    ("Logistics and Transport", 0.548),                        # "Transportation & Material Moving"
+                    ("Commerce and Accounting", 0.622),                        # "Business & Financial"
+                    ("Office and Administrative Support", 0.647),              # "Office & Administrative Support"
+                    ("Technical Maintenance", 0.672),                          # "Installation Maintenance & Repair"
+                    ("Manufacturing and Production", 0.678),                   # "Production Occupations"
+                    ("Catering and Food Service", 0.698),                      # "Food Preparation & Serving Related"
+                    ("Life, Physical, and Social Science", 0.702),             # "Life Physical Social Science"
+                    ("Management", 0.756),                                     # "Management"
+                    ("Construction", 0.880),                                   # "Construction & Extraction"
+                    ("Design and Engineering", 0.917),                         # "Architecture & Engineering"
+
                 ],
                 "Sunny": [
-                    ("Building & Grounds Cleaning & Maintenance", 0.013),
-                    ("Production Occupations", 0.426),
-                    ("Retired", 0.483),
-                    ("Personal Care & Service", 0.497),
-                    ("Community & Social Services", 0.497),
-                    ("Architecture & Engineering", 0.519),
-                    ("Sales & Related", 0.535),
-                    ("Arts Design Entertainment Sports & Media", 0.546),
-                    ("Life Physical Social Science", 0.560),
-                    ("Education&Training&Library", 0.578),
-                    ("Computer & Mathematical", 0.588),
-                    ("Farming Fishing & Forestry", 0.591),
-                    ("Student", 0.600),
-                    ("Unemployed", 0.611),
-                    ("Transportation & Material Moving", 0.636),
-                    ("Food Preparation & Serving Related", 0.638),
-                    ("Legal", 0.658),
-                    ("Office & Administrative Support", 0.660),
-                    ("Management", 0.661),
-                    ("Business & Financial", 0.683),
-                    ("Installation Maintenance & Repair", 0.700),
-                    ("Healthcare Support", 0.711),
-                    ("Healthcare Practitioners & Technical", 0.720),
-                    ("Protective Service", 0.736),
-                    ("Construction & Extraction", 0.786),
+                    ("Cleaning Services", 0.013),                              # "Building & Grounds Cleaning & Maintenance"
+                    ("Manufacturing and Production", 0.426),                   # "Production Occupations"
+                    ("Retired", 0.483),                                        # "Retired"
+                    ("Personal Care", 0.497),                                  # "Personal Care & Service"
+                    ("Social Services", 0.497),                                # "Community & Social Services"
+                    ("Design and Engineering", 0.519),                         # "Architecture & Engineering"
+                    ("Sales", 0.535),                                          # "Sales & Related"
+                    ("Arts and Media", 0.546),                                 # "Arts Design Entertainment Sports & Media"
+                    ("Life, Physical, and Social Science", 0.560),             # "Life Physical Social Science"
+                    ("Teaching and Learning Support", 0.578),                  # "Education&Training&Library"
+                    ("IT and Analytics", 0.588),                               # "Computer & Mathematical"
+                    ("Agriculture", 0.591),                                    # "Farming Fishing & Forestry"
+                    ("Student", 0.600),                                        # "Student"
+                    ("Unemployed", 0.611),                                     # "Unemployed"
+                    ("Logistics and Transport", 0.636),                        # "Transportation & Material Moving"
+                    ("Catering and Food Service", 0.638),                      # "Food Preparation & Serving Related"
+                    ("Law Professions", 0.658),                                # "Legal"
+                    ("Office and Administrative Support", 0.660),              # "Office & Administrative Support"
+                    ("Management", 0.661),                                     # "Management"
+                    ("Commerce and Accounting", 0.683),                        # "Business & Financial"
+                    ("Technical Maintenance", 0.700),                          # "Installation Maintenance & Repair"
+                    ("Healthcare Assistance", 0.711),                          # "Healthcare Support"
+                    ("Healthcare Professionals", 0.720),                       # "Healthcare Practitioners & Technical"
+                    ("Security and Emergency Services", 0.736),                # "Protective Service"
+                    ("Construction", 0.786),                                   # "Construction & Extraction"
+
                 ],
                 "Snowy": [
-                    ("Retired", 0.215),
-                    ("Arts Design Entertainment Sports & Media", 0.271),
-                    ("Business & Financial", 0.327),
-                    ("Community & Social Services", 0.350),
-                    ("Food Preparation & Serving Related", 0.350),
-                    ("Computer & Mathematical", 0.382),
-                    ("Installation Maintenance & Repair", 0.383),
-                    ("Farming Fishing & Forestry", 0.398),
-                    ("Unemployed", 0.414),
-                    ("Personal Care & Service", 0.422),
-                    ("Education&Training&Library", 0.480),
-                    ("Building & Grounds Cleaning & Maintenance", 0.500),
-                    ("Student", 0.510),
-                    ("Transportation & Material Moving", 0.558),
-                    ("Office & Administrative Support", 0.561),
-                    ("Management", 0.567),
-                    ("Sales & Related", 0.609),
-                    ("Architecture & Engineering", 0.666),
-                    ("Production Occupations", 0.672),
-                    ("Legal", 0.692),
-                    ("Construction & Extraction", 0.736),
-                    ("Healthcare Practitioners & Technical", 0.810),
-                    ("Healthcare Support", 0.903),
+                    ("Retired", 0.215),                                        # "Retired"
+                    ("Arts and Media", 0.271),                                 # "Arts Design Entertainment Sports & Media"
+                    ("Commerce and Accounting", 0.327),                        # "Business & Financial"
+                    ("Social Services", 0.350),                                # "Community & Social Services"
+                    ("Catering and Food Service", 0.350),                      # "Food Preparation & Serving Related"
+                    ("IT and Analytics", 0.382),                               # "Computer & Mathematical"
+                    ("Technical Maintenance", 0.383),                          # "Installation Maintenance & Repair"
+                    ("Agriculture", 0.398),                                    # "Farming Fishing & Forestry"
+                    ("Unemployed", 0.414),                                     # "Unemployed"
+                    ("Personal Care", 0.422),                                  # "Personal Care & Service"
+                    ("Teaching and Learning Support", 0.480),                  # "Education&Training&Library"
+                    ("Cleaning Services", 0.500),                              # "Building & Grounds Cleaning & Maintenance"
+                    ("Student", 0.510),                                        # "Student"
+                    ("Logistics and Transport", 0.558),                        # "Transportation & Material Moving"
+                    ("Office and Administrative Support", 0.561),              # "Office & Administrative Support"
+                    ("Management", 0.567),                                     # "Management"
+                    ("Sales", 0.609),                                          # "Sales & Related"
+                    ("Design and Engineering", 0.666),                         # "Architecture & Engineering"
+                    ("Manufacturing and Production", 0.672),                   # "Production Occupations"
+                    ("Law Professions", 0.692),                                # "Legal"
+                    ("Construction", 0.736),                                   # "Construction & Extraction"
+                    ("Healthcare Professionals", 0.810),                       # "Healthcare Practitioners & Technical"
+                    ("Healthcare Assistance", 0.903),                          # "Healthcare Support"
+
                 ]
             }
 
@@ -1296,82 +1306,85 @@ elif page == "Occupation-Based Recommendation":
 
             time_of_day_dict = {
                 "Morning": [
-                    ("Protective Service", 0.374),
-                    ("Retired", 0.396),
-                    ("Community & Social Services", 0.434),
-                    ("Arts Design Entertainment Sports & Media", 0.476),
-                    ("Personal Care & Service", 0.492),
-                    ("Education&Training&Library", 0.502),
-                    ("Computer & Mathematical", 0.511),
-                    ("Unemployed", 0.515),
-                    ("Architecture & Engineering", 0.538),
-                    ("Sales & Related", 0.540),
-                    ("Student", 0.544),
-                    ("Life Physical Social Science", 0.556),
-                    ("Food Preparation & Serving Related", 0.570),
-                    ("Transportation & Material Moving", 0.570),
-                    ("Production Occupations", 0.570),
-                    ("Legal", 0.571),
-                    ("Office & Administrative Support", 0.615),
-                    ("Business & Financial", 0.625),
-                    ("Management", 0.642),
-                    ("Installation Maintenance & Repair", 0.656),
-                    ("Construction & Extraction", 0.673),
-                    ("Healthcare Support", 0.700),
-                    ("Healthcare Practitioners & Technical", 0.704),
-                    ("Farming Fishing & Forestry", 0.724),
+                    ("Protective Service", 0.374),                             # "Protective Service"
+                    ("Retired", 0.396),                                        # "Retired"
+                    ("Social Services", 0.434),                                # "Community & Social Services"
+                    ("Arts and Media", 0.476),                                 # "Arts Design Entertainment Sports & Media"
+                    ("Personal Care", 0.492),                                  # "Personal Care & Service"
+                    ("Teaching and Learning Support", 0.502),                  # "Education&Training&Library"
+                    ("IT and Analytics", 0.511),                               # "Computer & Mathematical"
+                    ("Unemployed", 0.515),                                     # "Unemployed"
+                    ("Design and Engineering", 0.538),                         # "Architecture & Engineering"
+                    ("Sales", 0.540),                                          # "Sales & Related"
+                    ("Student", 0.544),                                        # "Student"
+                    ("Science & Research", 0.556),                             # "Life Physical Social Science"
+                    ("Catering and Food Service", 0.570),                      # "Food Preparation & Serving Related"
+                    ("Logistics and Transport", 0.570),                        # "Transportation & Material Moving"
+                    ("Manufacturing and Production", 0.570),                   # "Production Occupations"
+                    ("Law Professions", 0.571),                                # "Legal"
+                    ("Office and Administrative Support", 0.615),              # "Office & Administrative Support"
+                    ("Commerce and Accounting", 0.625),                        # "Business & Financial"
+                    ("Management", 0.642),                                     # "Management"
+                    ("Technical Maintenance", 0.656),                          # "Installation Maintenance & Repair"
+                    ("Construction", 0.673),                                   # "Construction & Extraction"
+                    ("Healthcare Assistance", 0.700),                          # "Healthcare Support"
+                    ("Healthcare Professionals", 0.704),                       # "Healthcare Practitioners & Technical"
+                    ("Agriculture", 0.724),                                    # "Farming Fishing & Forestry"
+
                 ],
                 "Afternoon": [
-                    ("Building & Grounds Cleaning & Maintenance", 0.022),
-                    ("Food Preparation & Serving Related", 0.525),
-                    ("Sales & Related", 0.594),
-                    ("Architecture & Engineering", 0.596),
-                    ("Education&Training&Library", 0.608),
-                    ("Transportation & Material Moving", 0.615),
-                    ("Retired", 0.621),
-                    ("Computer & Mathematical", 0.644),
-                    ("Business & Financial", 0.660),
-                    ("Arts Design Entertainment Sports & Media", 0.670),
-                    ("Community & Social Services", 0.677),
-                    ("Student", 0.679),
-                    ("Management", 0.727),
-                    ("Protective Service", 0.749),
-                    ("Healthcare Practitioners & Technical", 0.749),
-                    ("Personal Care & Service", 0.753),
-                    ("Life Physical Social Science", 0.767),
-                    ("Office & Administrative Support", 0.790),
-                    ("Unemployed", 0.862),
-                    ("Legal", 0.891),
-                    ("Construction & Extraction", 0.962),
-                    ("Healthcare Support", 0.970),
-                    ("Installation Maintenance & Repair", 0.999),
+                    ("Cleaning & Maintenance", 0.022),                         # "Building & Grounds Cleaning & Maintenance"
+                    ("Food Service", 0.525),                                   # "Food Preparation & Serving Related"
+                    ("Sales", 0.594),                                          # "Sales & Related"
+                    ("Design & Engineering", 0.596),                           # "Architecture & Engineering"
+                    ("Teaching & Library", 0.608),                             # "Education&Training&Library"
+                    ("Transport & Logistics", 0.615),                          # "Transportation & Material Moving"
+                    ("Retired", 0.621),                                        # "Retired"
+                    ("IT & Computing", 0.644),                                 # "Computer & Mathematical"
+                    ("Business & Finance", 0.660),                             # "Business & Financial"
+                    ("Arts & Media", 0.670),                                   # "Arts Design Entertainment Sports & Media"
+                    ("Social Services", 0.677),                                # "Community & Social Services"
+                    ("Student", 0.679),                                        # "Student"
+                    ("Management", 0.727),                                     # "Management"
+                    ("Protective Service", 0.749),                             # "Protective Service"
+                    ("Healthcare Professionals", 0.749),                       # "Healthcare Practitioners & Technical"
+                    ("Personal Care", 0.753),                                  # "Personal Care & Service"
+                    ("Science & Research", 0.767),                             # "Life Physical Social Science"
+                    ("Office & Admin Support", 0.790),                         # "Office & Administrative Support"
+                    ("Unemployed", 0.862),                                     # "Unemployed"
+                    ("Legal", 0.891),                                          # "Legal"
+                    ("Construction", 0.962),                                   # "Construction & Extraction"
+                    ("Healthcare Support", 0.970),                             # "Healthcare Support"
+                    ("Installation & Maintenance", 0.999),                    # "Installation Maintenance & Repair"
+
                 ],
                 "Evening": [
-                    ("Building & Grounds Cleaning & Maintenance", 0.255),
-                    ("Production Occupations", 0.382),
-                    ("Life Physical Social Science", 0.415),
-                    ("Retired", 0.423),
-                    ("Arts Design Entertainment Sports & Media", 0.428),
-                    ("Personal Care & Service", 0.436),
-                    ("Community & Social Services", 0.447),
-                    ("Farming Fishing & Forestry", 0.474),
-                    ("Sales & Related", 0.519),
-                    ("Unemployed", 0.534),
-                    ("Computer & Mathematical", 0.549),
-                    ("Architecture & Engineering", 0.556),
-                    ("Student", 0.582),
-                    ("Installation Maintenance & Repair", 0.587),
-                    ("Legal", 0.596),
-                    ("Education&Training&Library", 0.618),
-                    ("Office & Administrative Support", 0.621),
-                    ("Business & Financial", 0.626),
-                    ("Management", 0.636),
-                    ("Healthcare Practitioners & Technical", 0.646),
-                    ("Healthcare Support", 0.649),
-                    ("Transportation & Material Moving", 0.656),
-                    ("Food Preparation & Serving Related", 0.673),
-                    ("Protective Service", 0.895),
-                    ("Construction & Extraction", 0.907),
+                    ("Cleaning & Maintenance", 0.255),                       # Building & Grounds Cleaning & Maintenance
+                    ("Production", 0.382),                                    # Production Occupations
+                    ("Science & Research", 0.415),                           # Life Physical Social Science
+                    ("Retired", 0.423),                                      # Retired
+                    ("Arts & Media", 0.428),                                 # Arts Design Entertainment Sports & Media
+                    ("Personal Care", 0.436),                                # Personal Care & Service
+                    ("Social Services", 0.447),                              # Community & Social Services
+                    ("Farming & Forestry", 0.474),                           # Farming Fishing & Forestry
+                    ("Sales", 0.519),                                        # Sales & Related
+                    ("Unemployed", 0.534),                                   # Unemployed
+                    ("IT & Computing", 0.549),                               # Computer & Mathematical
+                    ("Design & Engineering", 0.556),                         # Architecture & Engineering
+                    ("Student", 0.582),                                      # Student
+                    ("Installation & Maintenance", 0.587),                   # Installation Maintenance & Repair
+                    ("Legal", 0.596),                                        # Legal
+                    ("Teaching & Library", 0.618),                           # Education&Training&Library
+                    ("Office & Admin Support", 0.621),                        # Office & Administrative Support
+                    ("Business & Finance", 0.626),                           # Business & Financial
+                    ("Management", 0.636),                                   # Management
+                    ("Healthcare Professionals", 0.646),                      # Healthcare Practitioners & Technical
+                    ("Healthcare Support", 0.649),                           # Healthcare Support
+                    ("Transport & Logistics", 0.656),                        # Transportation & Material Moving
+                    ("Food Service", 0.673),                                 # Food Preparation & Serving Related
+                    ("Protective Service", 0.895),                           # Protective Service
+                    ("Construction", 0.907),                                 # Construction & Extraction
+
                 ]
             }
 
@@ -1379,5 +1392,6 @@ elif page == "Occupation-Based Recommendation":
             for tab, time in zip(time_tabs, time_of_day_dict.keys()):
                 with tab:
                     plot_occupation_probs(f"Time of Day: {time}", time_of_day_dict[time])
+
 
 
